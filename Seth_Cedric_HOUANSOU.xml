@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+
+<!--<!DOCTYPE syllabus SYSTEM "Seth_Cedric_HOUANSOU.dtd">
+-->
+<syllabus xsi:noNamespaceSchemaLocation="Seth_Cedric_HOUANSOU.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<cours>
+			<!--La description du cours-->
+			
+		<description>
+			<intitule_cours>Systeme d'information</intitule_cours>
+			<intitule_ue titre="informatique">INF 413</intitule_ue>
+			<charge_travail>
+				<credit>6</credit>
+				<coefficient>2</coefficient>
+				<volume_horaire>60H</volume_horaire>
+			</charge_travail>
+			<semestre>1</semestre>
+			<niveau>debutant</niveau>
+			<pre_requis>connaissance analyse UML</pre_requis>
+		</description>
+		
+			<!--Information sur les enseignants-->
+			
+		<enseignants nombre="1">
+			<enseignant>
+				<prenom>François</prenom>
+				<nom>KALY</nom>
+				<adresse>Direction pedagogique de l'UFR_SET</adresse>
+				<couriel>francois.kaly@univ-thies.sn</couriel>
+				<heure_bureau>
+					ouvert tous les jours sauf le dimanche de 15h à 18h
+				</heure_bureau>
+			</enseignant>
+		</enseignants>
+		
+			<!--Information sur le lieu et l'horaire du cours-->
+			
+		<lieu_horaire>
+			<salle>classe numero 5</salle>
+			<heure_debut>15h</heure_debut>
+			<heure_fin>18h</heure_fin>
+		</lieu_horaire>
+	</cours>
+</syllabus>

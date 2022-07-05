@@ -1,0 +1,30 @@
+
+<!ELEMENT syllabus (cours+)>
+<!ELEMENT cours (description, enseignants, lieu_horaire)>
+
+<!ELEMENT description (intitule_cours, intitule_ue, charge_travail, semestre, niveau, pre_requis)>
+<!ELEMENT intitule_cours (#PCDATA)>
+<!ELEMENT intitule_ue (#PCDATA)>
+<!ATTLIST intitule_ue titre CDATA #REQUIRED>
+<!ELEMENT charge_travail (credit, coefficient, volume_horaire)>
+<!ELEMENT credit (#PCDATA)>
+<!ELEMENT coefficient (#PCDATA)>
+<!ELEMENT volume_horaire (#PCDATA)>
+<!ELEMENT semestre (#PCDATA)>
+<!ELEMENT niveau (#PCDATA)>
+<!ELEMENT pre_requis (#PCDATA)>
+
+<!ELEMENT enseignants (enseignant+)>
+<!ATTLIST enseignants nombre CDATA #REQUIRED>
+<!ELEMENT enseignant (prenom, nom, adresse, couriel+, heure_bureau)>
+<!ELEMENT prenom (#PCDATA)>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT adresse (#PCDATA)>
+<!ELEMENT couriel (#PCDATA)>
+<!ELEMENT heure_bureau (#PCDATA)>
+
+<!ELEMENT lieu_horaire (salle+, heure_debut, heure_fin)>
+<!ELEMENT salle (#PCDATA)>
+<!ELEMENT heure_debut (#PCDATA)>
+<!ELEMENT heure_fin (#PCDATA)>
+

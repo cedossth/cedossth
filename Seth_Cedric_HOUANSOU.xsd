@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+
+  <xsd:element name="credit" type="xsd:positiveInteger"/>
+
+  <xsd:element name="semestre" type="xsd:positiveInteger"/>
+
+  <xsd:element name="volume_horaire" type="xsd:string"/>
+
+  <xsd:element name="prenom" type="xsd:string"/>
+
+  <xsd:element name="heure_debut" type="xsd:string"/>
+
+  <xsd:element name="couriel" type="xsd:string"/>
+  
+  <xsd:element name="intitule_cours" type="xsd:string"/>
+  
+  <xsd:element name="nom" type="xsd:string"/>
+  
+  <xsd:element name="niveau" type="xsd:string"/>
+  
+  <xsd:element name="pre_requis" type="xsd:string"/>
+
+  <xsd:element name="salle" type="xsd:string"/>
+
+  <xsd:element name="heure_fin" type="xsd:string"/>
+
+  <xsd:element name="coefficient" type="xsd:positiveInteger"/>
+
+  <xsd:element name="adresse" type="xsd:string"/>
+
+  <xsd:element name="heure_bureau" type="xsd:string"/>
+
+  <xsd:element name="lieu_horaire">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="salle"/>
+        <xsd:element ref="heure_debut"/>
+        <xsd:element ref="heure_fin"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+
+  <xsd:element name="charge_travail">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="credit"/>
+        <xsd:element ref="coefficient"/>
+        <xsd:element ref="volume_horaire"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+
+  <xsd:element name="intitule_ue">
+    <xsd:complexType>
+     <xsd:simpleContent>
+       <xsd:extension base="xsd:string">
+       	<xsd:attribute name="titre" type="xsd:string" use="required"/>
+       </xsd:extension>
+     </xsd:simpleContent>
+    </xsd:complexType>
+  </xsd:element>
+  
+  <xsd:element name="description">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="intitule_cours"/>
+        <xsd:element ref="intitule_ue"/>
+        <xsd:element ref="charge_travail"/>
+        <xsd:element ref="semestre"/>
+        <xsd:element ref="niveau"/>
+        <xsd:element ref="pre_requis"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="enseignant">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="prenom"/>
+        <xsd:element ref="nom"/>
+        <xsd:element ref="adresse"/>
+        <xsd:element ref="couriel"/>
+        <xsd:element ref="heure_bureau"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  
+  <xsd:element name="enseignants">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="enseignant" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="nombre" type="xsd:positiveInteger" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+  
+  <xsd:element name="cours">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="description"/>
+        <xsd:element ref="enseignants"/>
+        <xsd:element ref="lieu_horaire"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  
+  <xsd:element name="syllabus">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="cours" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+</xsd:schema>
